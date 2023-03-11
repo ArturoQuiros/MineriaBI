@@ -23,7 +23,9 @@ DROP TABLE DIM_TIME;
 DROP TABLE FACT_SALES;
 
 
---Time
+/*
+	Creacion de la tabla DIM_TIME, que contiene todos los dias de 1996-1998
+*/
 
 CREATE TABLE DIM_TIME(
 	ID_TIME INT IDENTITY NOT NULL CONSTRAINT PK_TIME PRIMARY KEY,
@@ -37,10 +39,17 @@ CREATE TABLE DIM_TIME(
 	PERIOD VARCHAR(30) NULL
 )
 
+/*
+	Reinicio de la tabla DIM_TIME
+*/
+
 SELECT * FROM DIM_TIME
 DELETE FROM DIM_TIME
 DBCC CHECKIDENT (DIM_TIME, RESEED, 0)
 
+/*
+	Procedimiento para llenar la tabla DIM_TIME
+*/
 
 BEGIN
 SET LANGUAGE English;
@@ -100,7 +109,9 @@ END ;
 SELECT * FROM DIM_TIME
 
 
-
+/*
+	Creacion de la tabla DIM_EMPLOYEES, que contiene los datos relevantes del empleado desnormalizados. En el campo TERRITORY va la region en la que trabaja el empleado
+*/
 
 CREATE TABLE DIM_EMPLOYEES(
 	ID_EMPLOYEE INT IDENTITY NOT NULL CONSTRAINT PK_EMPLOYEE PRIMARY KEY,
@@ -116,6 +127,9 @@ CREATE TABLE DIM_EMPLOYEES(
     REPORTS_TO VARCHAR(60) NOT NULL
 )
 
+/*
+	Creacion de la tabla DIM_ORDERS, que contiene los datos relevantes de las ordenes desnormalizados
+*/
 
 CREATE TABLE DIM_ORDERS(
 	ID_ORDER INT IDENTITY NOT NULL CONSTRAINT PK_ORDER PRIMARY KEY,
@@ -133,6 +147,10 @@ CREATE TABLE DIM_ORDERS(
     SHIP_COUNTRY VARCHAR(30) NOT NULL
 )
 
+/*
+	Creacion de la tabla DIM_CUSTOMERS, que contiene los datos relevantes de los clientes desnormalizados
+*/
+
 CREATE TABLE DIM_CUSTOMERS(
 	ID_CUSTOMER INT IDENTITY NOT NULL CONSTRAINT PK_CUSTOMER PRIMARY KEY,
 	CUSTOMER_ID VARCHAR(15) NOT NULL,
@@ -146,6 +164,10 @@ CREATE TABLE DIM_CUSTOMERS(
     ENTRY_DATE DATE NOT NULL
 )
 
+/*
+	Creacion de la tabla DIM_PRODUCTS, que contiene los datos relevantes de los productos desnormalizados. Incluye la descripcion de la categoria
+*/
+
 CREATE TABLE DIM_PRODUCTS(
 	ID_PRODUCT INT IDENTITY NOT NULL CONSTRAINT PK_PRODUCT PRIMARY KEY,
 	PRODUCT_ID INT NOT NULL,
@@ -156,6 +178,9 @@ CREATE TABLE DIM_PRODUCTS(
     REORDER_LEVEL INT NOT NULL
 )
 
+/*
+	Creacion de la tabla FACT_SALES, que contiene los datos relevantes de cada producto las ordenes y se relaciona con las demas tablas
+*/
 
 CREATE TABLE FACT_SALES(
 	ID_SALE INT IDENTITY NOT NULL CONSTRAINT PK_SALE PRIMARY KEY CLUSTERED,
@@ -170,6 +195,10 @@ CREATE TABLE FACT_SALES(
     ORDER_DATE DATE NOT NULL
 ) 
 
+/*
+	Creacion de la tabla ORDER_DETAILS, igual a la tabla de la base de datos SA
+*/
+
 CREATE TABLE ORDER_DETAILS (
 	ORDERID INT NOT NULL,
 	PRODUCTID INT NOT NULL,
@@ -177,6 +206,10 @@ CREATE TABLE ORDER_DETAILS (
 	QUANTITY INT NOT NULL,
     DISCOUNT DECIMAL(25,2) NOT NULL
 )
+
+/*
+	Creacion de la tabla METRICAS
+*/
 
 CREATE TABLE METRICAS(
 	IDENTIFICADOR INT NULL
@@ -217,7 +250,9 @@ CREATE TABLE DIM_EMPLOYEE_TERRITORIES(
 )
 */
 
-
+/*
+	Creacion de las llaves foraneas
+*/
 
 ALTER TABLE FACT_SALES  WITH CHECK ADD  CONSTRAINT FK_SALES_EMPLOYEES FOREIGN KEY(ID_EMPLOYEE)
 REFERENCES DIM_EMPLOYEES (ID_EMPLOYEE)
@@ -249,6 +284,13 @@ REFERENCES DIM_SUPPLIERS (ID_SUPPLIER)
 
 -- DIM_EMPLOYEES:
 
+/*
+	Script para llenar la tabla DIM_EMPLOYEES
+	Tiene todos los campos en mayusculas
+	El nombre unido al apellido
+	Reemplaza valores nulos con texto
+*/
+
 SELECT DISTINCT
 UPPER(E.EMPLOYEEID) EMPLOYEE_ID,
 UPPER(CONCAT(E.FIRSTNAME, ' ', E.LASTNAME)) EMPLOYEE_NAME,
@@ -275,6 +317,13 @@ ORDER BY EMPLOYEE_ID
 
 -- DIM_ORDERS:
 
+/*
+	Script para llenar la tabla DIM_ORDERS
+	Tiene todos los campos en mayusculas
+	El nombre del empleado unido al apellido
+	Reemplaza valores nulos con texto
+*/
+
 SELECT
 UPPER(O.ORDERID) ORDER_ID,
 UPPER(C.CUSTOMERID) CUSTOMERID,
@@ -298,6 +347,12 @@ ON S.SHIPPERID = O.SHIPVIA
 ORDER BY ORDER_ID
 
 --DIM_CUSTOMERS:
+
+/*
+	Script para llenar la tabla DIM_CUSTOMERS
+	Tiene todos los campos en mayusculas
+	Reemplaza valores nulos con texto
+*/
 
 SELECT
 UPPER(C.CUSTOMERID) CUSTOMER_ID,
@@ -337,6 +392,11 @@ LEFT JOIN (
 
 -- DIM_PRODUCTS:
 
+/*
+	Script para llenar la tabla DIM_PRODUCTS
+	Tiene todos los campos en mayusculas
+*/
+
 SELECT
 UPPER(P.PRODUCTID) PRODUCT_ID,
 UPPER(P.PRODUCTNAME) PRODUCT_NAME,
@@ -357,6 +417,10 @@ SELECT * FROM ORDERDETAILS
 
 
 -- FACT_SALES:
+
+/*
+	Script para llenar la tabla FACT_SALES con los IDs de las dimensiones y los datos de las ventas
+*/
 
 SELECT 
 E.ID_EMPLOYEE,
