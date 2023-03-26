@@ -2,6 +2,20 @@
 	Crear y correr en la DB de Staging los stored procedures para agregar datos de ventas de 1991 a 2020
 */
 
+
+
+
+/*
+	Crear copia de tabla Orders para que el stored procedure se ejecute más rapido
+*/
+
+SELECT * INTO Orders2
+FROM Orders;
+
+
+
+
+
 /*
 	Crear stored procedure generate_order
 */
@@ -47,14 +61,17 @@ BEGIN
     SET @v_codigo_shipper = (select top 1 ShipperID from Shippers order by NEWID());
 
     SET @v_codigo_pedido = (select max(OrderID) + 1 from Orders);
-    
-    SET @v_freight = (select top 1 Freight from Orders order by NEWID());
-    SET @v_ship_name = (select top 1 ShipName from Orders order by NEWID());
-    SET @v_ship_address = (select top 1 ShipAddress from Orders order by NEWID());
-    SET @v_ship_city = (select top 1 ShipCity from Orders order by NEWID());
-    SET @v_ship_region = (select top 1 ShipRegion from Orders order by NEWID());
-    SET @v_ship_postal_code = (select top 1 ShipPostalCode from Orders order by NEWID());
-    SET @v_ship_country = (select top 1 ShipCountry from Orders order by NEWID());
+
+    SELECT top 1 
+    @v_freight = Freight, 
+    @v_ship_name = ShipName,
+    @v_ship_address = ShipAddress,
+    @v_ship_city = ShipCity,
+    @v_ship_region = ShipRegion,
+    @v_ship_postal_code = ShipPostalCode,
+    @v_ship_country = ShipCountry
+    FROM Orders2
+    order by NEWID()
 
     insert into orders
           (CustomerID,
@@ -87,11 +104,16 @@ BEGIN
 
     SET @v_registros = (Select ceiling(rand()*25));
 
+    SET @cnt2 = 1;
+
     WHILE @cnt2 <= @v_registros
     BEGIN
     
-    SET @v_codigo_producto = (select top 1 ProductID from Products order by NEWID());
-    SET @v_precio_venta = (select top 1 UnitPrice from Products order by NEWID());
+    SELECT top 1 
+    @v_codigo_producto = ProductID, 
+    @v_precio_venta = UnitPrice
+    FROM Products
+    order by NEWID()
 
     SET @v_cantidad = (Select ceiling(rand()*50));
 
@@ -162,6 +184,16 @@ EXEC apply_order
 
 
 
+/*
+	Eliminar la tabla Orders2
+*/
+
+DROP TABLE Orders2;
 
 
 
+
+
+/*
+	Volver a pasar los datos al Datawarehouse, en la tabla DIM_TIME, poner 1991-2020
+*/
