@@ -1,0 +1,58 @@
+Ventas
+	Total $ en los 30 años
+	Cantidad de ordenes realizadas
+	Total $ por mes
+	Total $ por pais (del cliente)
+	Total $ por region (del cliente)
+	Total $ por ciudad (del cliente)
+	Filtro por año
+
+Productos
+	Productos mas vendidos (cantidad)
+	Productos con más ingresos
+	Total $ por mes
+	Total $ por pais (del cliente)
+	Total $ por region (del cliente)
+	Total $ por ciudad (del cliente)
+	Filtro por año
+	Filtro por Producto
+
+Categorias
+	Categorias mas vendidas (cantidad)
+	Categorias con más ingresos
+	Total $ por mes
+	Total $ por pais (del cliente)
+	Total $ por region (del cliente)
+	Total $ por ciudad (del cliente)
+	Filtro por año
+	Filtro por Categoria
+
+Empleados
+	Empleados con mas órdenes (cantidad)
+	Empleados con más ingresos
+	Total $ por mes
+	Total $ por pais (del cliente)
+	Total $ por region (del cliente)
+	Total $ por ciudad (del cliente)
+	Filtro por año
+	Filtro por Empleado
+
+Clientes
+	Clientes con más órdenes
+	Clientes con más ingresos
+	Total $ por mes
+	Total $ por pais (del cliente)
+	Total $ por region (del cliente)
+	Total $ por ciudad (del cliente)
+	Filtro por año
+	Filtro por Cliente
+
+Proveedores
+	Proveedores con más órdenes
+	Proveedores con más ingresos
+	Total $ por mes
+	Total $ por pais (del cliente)
+	Total $ por region (del cliente)
+	Total $ por ciudad (del cliente)
+	Filtro por año
+	Filtro por Proveedor
