@@ -1,0 +1,18 @@
+C:\Users\Usuario\Desktop\UTN\Mineria de Datos\Proyecto\AnalisisNorthwind\AnalisisNorthwind\bin\Model.asdatabase
+C:\Users\Usuario\Desktop\UTN\Mineria de Datos\Proyecto\AnalisisNorthwind\AnalisisNorthwind\bin\Model.deploymenttargets
+C:\Users\Usuario\Desktop\UTN\Mineria de Datos\Proyecto\AnalisisNorthwind\AnalisisNorthwind\bin\Model.deploymentoptions
+C:\Users\Usuario\Desktop\UTN\Mineria de Datos\Proyecto\AnalisisNorthwind\AnalisisNorthwind\obj\Development\AnalisisNorthwind.smproj.AssemblyReference.cache
+C:\Users\Usuario\Desktop\UTN\Mineria de Datos\Proyecto\AnalisisNorthwind\AnalisisNorthwind\obj\Development\AnalisisNorthwind.smproj.SuggestedBindingRedirects.cache
+C:\Users\Usuario\Desktop\UTN\Mineria de Datos\Proyecto\AnalisisNorthwind\AnalisisNorthwind\obj\Development\AnalisisNorthwind.smproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\UTN\Mineria de Datos\Proyecto\AnalisisNorthwind\AnalisisNorthwind\obj\Development\Model.asdatabase
+C:\Users\Usuario\Desktop\UTN\Mineria de Datos\Proyecto\AnalisisNorthwind\AnalisisNorthwind\obj\Development\Model.deploymentoptions
+C:\Users\Usuario\Desktop\UTN\Mineria de Datos\Proyecto\AnalisisNorthwind\AnalisisNorthwind\obj\Development\Model.deploymenttargets
+C:\Users\Usuario\Desktop\UTN\Mineria de Datos\Proyecto\Proyecto\MineriaBI\Proyecto 2\AnalisisNorthwind\AnalisisNorthwind\bin\Model.asdatabase
+C:\Users\Usuario\Desktop\UTN\Mineria de Datos\Proyecto\Proyecto\MineriaBI\Proyecto 2\AnalisisNorthwind\AnalisisNorthwind\bin\Model.deploymenttargets
+C:\Users\Usuario\Desktop\UTN\Mineria de Datos\Proyecto\Proyecto\MineriaBI\Proyecto 2\AnalisisNorthwind\AnalisisNorthwind\bin\Model.deploymentoptions
+C:\Users\Usuario\Desktop\UTN\Mineria de Datos\Proyecto\Proyecto\MineriaBI\Proyecto 2\AnalisisNorthwind\AnalisisNorthwind\obj\Development\AnalisisNorthwind.smproj.AssemblyReference.cache
+C:\Users\Usuario\Desktop\UTN\Mineria de Datos\Proyecto\Proyecto\MineriaBI\Proyecto 2\AnalisisNorthwind\AnalisisNorthwind\obj\Development\AnalisisNorthwind.smproj.SuggestedBindingRedirects.cache
+C:\Users\Usuario\Desktop\UTN\Mineria de Datos\Proyecto\Proyecto\MineriaBI\Proyecto 2\AnalisisNorthwind\AnalisisNorthwind\obj\Development\AnalisisNorthwind.smproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\UTN\Mineria de Datos\Proyecto\Proyecto\MineriaBI\Proyecto 2\AnalisisNorthwind\AnalisisNorthwind\obj\Development\Model.asdatabase
+C:\Users\Usuario\Desktop\UTN\Mineria de Datos\Proyecto\Proyecto\MineriaBI\Proyecto 2\AnalisisNorthwind\AnalisisNorthwind\obj\Development\Model.deploymenttargets
+C:\Users\Usuario\Desktop\UTN\Mineria de Datos\Proyecto\Proyecto\MineriaBI\Proyecto 2\AnalisisNorthwind\AnalisisNorthwind\obj\Development\Model.deploymentoptions

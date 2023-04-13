@@ -1,0 +1,45 @@
+
+KPIs: El objetivo de los KPIs es medir las ventas mensuales y determinar el crecimiento mensual con respecto a un incremento meta anual del 2% de las ventas del año anterior
+Formulas: 
+
+Current Sales = Sumx(FACT_SALES, ([UNIT_PRICE] * [QUANTITY])* (1 - [DISCOUNT]))
+
+Last Year Sales = var monto_anio_anterior = calculate([Current Sales],filter(all(DIM_TIME[YEAR]),DIM_TIME[YEAR]=max(DIM_TIME[YEAR])-1))
+var resultado = monto_anio_anterior
+return IF(ISBLANK(resultado),0,resultado)
+
+Goal = [Last Year Sales] * 1.02
+
+Percentage Inc-Dec Monthly Anual = IFERROR(
+    (([Current Sales] - [Last Year Sales]) / [Last Year Sales]),
+    0
+)
+
+Inc-Dec Color = IF([Percentage Inc-Dec Monthly Anual] > 0, 1, 0)
+
+Sales Quantity = DISTINCTCOUNT(FACT_SALES[ID_SALE])
+
+Min Sales = [Goal] * 0.5
+
+Max Sales = [Goal] * 1.3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

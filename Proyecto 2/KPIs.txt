@@ -1,58 +1,73 @@
 Ventas
-	Total $ en los 30 años
+	Total $ este año
+	Total $ el año anterior
+	Meta anual (+2%)
 	Cantidad de ordenes realizadas
-	Total $ por mes
+	Total $ por mes, con porcentaje de inc/dec y cantidad de ordenes
 	Total $ por pais (del cliente)
-	Total $ por region (del cliente)
 	Total $ por ciudad (del cliente)
 	Filtro por año
 
 Productos
-	Productos mas vendidos (cantidad)
-	Productos con más ingresos
-	Total $ por mes
+	Total $ este año
+	Total $ el año anterior
+	Meta anual (+2%)
+	Cantidad de ordenes realizadas
+	Productos con más ingresos, con porcentaje de inc/dec segun año anterior y cantidad de ordenes
+	Total $ por mes, con porcentaje de inc/dec y cantidad de ordenes
 	Total $ por pais (del cliente)
-	Total $ por region (del cliente)
 	Total $ por ciudad (del cliente)
 	Filtro por año
 	Filtro por Producto
 
 Categorias
-	Categorias mas vendidas (cantidad)
-	Categorias con más ingresos
+	Total $ este año
+	Total $ el año anterior
+	Meta anual (+2%)
+	Cantidad de ordenes realizadas
+	Categorias con más ingresos, con porcentaje de inc/dec segun año anterior y cantidad de ordenes
+	Total $ por mes, con porcentaje de inc/dec y cantidad de ordenes
 	Total $ por mes
 	Total $ por pais (del cliente)
-	Total $ por region (del cliente)
 	Total $ por ciudad (del cliente)
 	Filtro por año
 	Filtro por Categoria
 
 Empleados
-	Empleados con mas órdenes (cantidad)
-	Empleados con más ingresos
+	Total $ este año
+	Total $ el año anterior
+	Meta anual (+2%)
+	Cantidad de ordenes realizadas
+	Empleados con más ingresos, con porcentaje de inc/dec segun año anterior y cantidad de ordenes
+	Total $ por mes, con porcentaje de inc/dec y cantidad de ordenes
 	Total $ por mes
 	Total $ por pais (del cliente)
-	Total $ por region (del cliente)
 	Total $ por ciudad (del cliente)
 	Filtro por año
 	Filtro por Empleado
 
 Clientes
-	Clientes con más órdenes
-	Clientes con más ingresos
+	Total $ este año
+	Total $ el año anterior
+	Meta anual (+2%)
+	Cantidad de ordenes realizadas
+	Clientes con más ingresos, con porcentaje de inc/dec segun año anterior y cantidad de ordenes
+	Total $ por mes, con porcentaje de inc/dec y cantidad de ordenes
 	Total $ por mes
-	Total $ por pais (del cliente)
-	Total $ por region (del cliente)
-	Total $ por ciudad (del cliente)
+	Total $ por empleado
+	Total $ por categoria de producto
 	Filtro por año
 	Filtro por Cliente
 
 Proveedores
-	Proveedores con más órdenes
-	Proveedores con más ingresos
+	Total $ este año
+	Total $ el año anterior
+	Meta anual (+2%)
+	Cantidad de ordenes realizadas
+	Proveedores con más ingresos, con porcentaje de inc/dec segun año anterior y cantidad de ordenes
+	Total $ por mes, con porcentaje de inc/dec y cantidad de ordenes
 	Total $ por mes
 	Total $ por pais (del cliente)
-	Total $ por region (del cliente)
 	Total $ por ciudad (del cliente)
 	Filtro por año
 	Filtro por Proveedor

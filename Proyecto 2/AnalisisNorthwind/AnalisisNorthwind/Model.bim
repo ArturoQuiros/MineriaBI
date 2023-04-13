@@ -1,0 +1,766 @@
+{
+  "name": "SemanticModel",
+  "compatibilityLevel": 1200,
+  "model": {
+    "culture": "es-CR",
+    "dataSources": [
+      {
+        "name": "SqlServer DESKTOP-GENJ6EP northwind_dw",
+        "connectionString": "Provider=SQLOLEDB;Data Source=DESKTOP-GENJ6EP;Initial Catalog=northwind_dw;User ID=sa;Persist Security Info=true",
+        "impersonationMode": "impersonateAccount",
+        "account": "Usuario",
+        "annotations": [
+          {
+            "name": "ConnectionEditUISource",
+            "value": "SqlServer"
+          }
+        ]
+      }
+    ],
+    "tables": [
+      {
+        "name": "DIM_CUSTOMERS",
+        "columns": [
+          {
+            "name": "ID_CUSTOMER",
+            "dataType": "int64",
+            "sourceColumn": "ID_CUSTOMER",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "CUSTOMER_ID",
+            "dataType": "string",
+            "sourceColumn": "CUSTOMER_ID",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "COMPANY_NAME",
+            "dataType": "string",
+            "sourceColumn": "COMPANY_NAME",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "CONTACT_NAME",
+            "dataType": "string",
+            "sourceColumn": "CONTACT_NAME",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "CONTACT_TITLE",
+            "dataType": "string",
+            "sourceColumn": "CONTACT_TITLE",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "CITY",
+            "dataType": "string",
+            "sourceColumn": "CITY",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "REGION",
+            "dataType": "string",
+            "sourceColumn": "REGION",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "COUNTRY",
+            "dataType": "string",
+            "sourceColumn": "COUNTRY",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "CATEGORY",
+            "dataType": "string",
+            "sourceColumn": "CATEGORY",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "ENTRY_DATE",
+            "dataType": "dateTime",
+            "sourceColumn": "ENTRY_DATE",
+            "formatString": "d/M/yyyy",
+            "sourceProviderType": "WChar",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"DateTimeCustom\"><DateTimes><DateTime LCID=\"5130\" Group=\"ShortDate\" FormatString=\"d/M/yyyy\" /></DateTimes></Format>"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DIM_CUSTOMERS",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[DIM_CUSTOMERS].*   FROM [dbo].[DIM_CUSTOMERS] ",
+              "dataSource": "SqlServer DESKTOP-GENJ6EP northwind_dw"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[DIM_CUSTOMERS].*   FROM [dbo].[DIM_CUSTOMERS] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DIM_CUSTOMERS"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "DIM_EMPLOYEES",
+        "columns": [
+          {
+            "name": "ID_EMPLOYEE",
+            "dataType": "int64",
+            "sourceColumn": "ID_EMPLOYEE",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "EMPLOYEE_ID",
+            "dataType": "int64",
+            "sourceColumn": "EMPLOYEE_ID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "EMPLOYEE_NAME",
+            "dataType": "string",
+            "sourceColumn": "EMPLOYEE_NAME",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "TITLE",
+            "dataType": "string",
+            "sourceColumn": "TITLE",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "BIRTH_DATE",
+            "dataType": "dateTime",
+            "sourceColumn": "BIRTH_DATE",
+            "formatString": "d/M/yyyy",
+            "sourceProviderType": "WChar",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"DateTimeCustom\"><DateTimes><DateTime LCID=\"5130\" Group=\"ShortDate\" FormatString=\"d/M/yyyy\" /></DateTimes></Format>"
+              }
+            ]
+          },
+          {
+            "name": "HIRE_DATE",
+            "dataType": "dateTime",
+            "sourceColumn": "HIRE_DATE",
+            "formatString": "d/M/yyyy",
+            "sourceProviderType": "WChar",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"DateTimeCustom\"><DateTimes><DateTime LCID=\"5130\" Group=\"ShortDate\" FormatString=\"d/M/yyyy\" /></DateTimes></Format>"
+              }
+            ]
+          },
+          {
+            "name": "CITY",
+            "dataType": "string",
+            "sourceColumn": "CITY",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "REGION",
+            "dataType": "string",
+            "sourceColumn": "REGION",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "COUNTRY",
+            "dataType": "string",
+            "sourceColumn": "COUNTRY",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "TERRITORY",
+            "dataType": "string",
+            "sourceColumn": "TERRITORY",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "REPORTS_TO",
+            "dataType": "string",
+            "sourceColumn": "REPORTS_TO",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DIM_EMPLOYEES",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[DIM_EMPLOYEES].*   FROM [dbo].[DIM_EMPLOYEES] ",
+              "dataSource": "SqlServer DESKTOP-GENJ6EP northwind_dw"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[DIM_EMPLOYEES].*   FROM [dbo].[DIM_EMPLOYEES] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DIM_EMPLOYEES"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "DIM_ORDERS",
+        "columns": [
+          {
+            "name": "ID_ORDER",
+            "dataType": "int64",
+            "sourceColumn": "ID_ORDER",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ORDER_ID",
+            "dataType": "int64",
+            "sourceColumn": "ORDER_ID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "CUSTOMERID",
+            "dataType": "string",
+            "sourceColumn": "CUSTOMERID",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "CUSTOMER",
+            "dataType": "string",
+            "sourceColumn": "CUSTOMER",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "EMPLOYEE",
+            "dataType": "string",
+            "sourceColumn": "EMPLOYEE",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "ORDER_DATE",
+            "dataType": "dateTime",
+            "sourceColumn": "ORDER_DATE",
+            "formatString": "d/M/yyyy",
+            "sourceProviderType": "WChar",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"DateTimeCustom\"><DateTimes><DateTime LCID=\"5130\" Group=\"ShortDate\" FormatString=\"d/M/yyyy\" /></DateTimes></Format>"
+              }
+            ]
+          },
+          {
+            "name": "REQUIRED_DATE",
+            "dataType": "dateTime",
+            "sourceColumn": "REQUIRED_DATE",
+            "formatString": "d/M/yyyy",
+            "sourceProviderType": "WChar",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"DateTimeCustom\"><DateTimes><DateTime LCID=\"5130\" Group=\"ShortDate\" FormatString=\"d/M/yyyy\" /></DateTimes></Format>"
+              }
+            ]
+          },
+          {
+            "name": "SHIPPED_DATE",
+            "dataType": "dateTime",
+            "sourceColumn": "SHIPPED_DATE",
+            "formatString": "d/M/yyyy",
+            "sourceProviderType": "WChar",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"DateTimeCustom\"><DateTimes><DateTime LCID=\"5130\" Group=\"ShortDate\" FormatString=\"d/M/yyyy\" /></DateTimes></Format>"
+              }
+            ]
+          },
+          {
+            "name": "SHIPPER",
+            "dataType": "string",
+            "sourceColumn": "SHIPPER",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "FREIGHT",
+            "dataType": "double",
+            "sourceColumn": "FREIGHT",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "SHIP_CITY",
+            "dataType": "string",
+            "sourceColumn": "SHIP_CITY",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "SHIP_REGION",
+            "dataType": "string",
+            "sourceColumn": "SHIP_REGION",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "SHIP_COUNTRY",
+            "dataType": "string",
+            "sourceColumn": "SHIP_COUNTRY",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DIM_ORDERS",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[DIM_ORDERS].*   FROM [dbo].[DIM_ORDERS] ",
+              "dataSource": "SqlServer DESKTOP-GENJ6EP northwind_dw"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[DIM_ORDERS].*   FROM [dbo].[DIM_ORDERS] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DIM_ORDERS"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "DIM_PRODUCTS",
+        "columns": [
+          {
+            "name": "ID_PRODUCT",
+            "dataType": "int64",
+            "sourceColumn": "ID_PRODUCT",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "PRODUCT_ID",
+            "dataType": "int64",
+            "sourceColumn": "PRODUCT_ID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "PRODUCT_NAME",
+            "dataType": "string",
+            "sourceColumn": "PRODUCT_NAME",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "CATEGORY",
+            "dataType": "string",
+            "sourceColumn": "CATEGORY",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "DESCRIPTION",
+            "dataType": "string",
+            "sourceColumn": "DESCRIPTION",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "SUPPLIER",
+            "dataType": "string",
+            "sourceColumn": "SUPPLIER",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "REORDER_LEVEL",
+            "dataType": "int64",
+            "sourceColumn": "REORDER_LEVEL",
+            "sourceProviderType": "Integer"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DIM_PRODUCTS",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[DIM_PRODUCTS].*   FROM [dbo].[DIM_PRODUCTS] ",
+              "dataSource": "SqlServer DESKTOP-GENJ6EP northwind_dw"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[DIM_PRODUCTS].*   FROM [dbo].[DIM_PRODUCTS] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DIM_PRODUCTS"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "DIM_TIME",
+        "columns": [
+          {
+            "name": "ID_TIME",
+            "dataType": "int64",
+            "sourceColumn": "ID_TIME",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "DATE",
+            "dataType": "dateTime",
+            "sourceColumn": "DATE",
+            "formatString": "d/M/yyyy",
+            "sourceProviderType": "WChar",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"DateTimeCustom\"><DateTimes><DateTime LCID=\"5130\" Group=\"ShortDate\" FormatString=\"d/M/yyyy\" /></DateTimes></Format>"
+              }
+            ]
+          },
+          {
+            "name": "YEAR",
+            "dataType": "int64",
+            "sourceColumn": "YEAR",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "MONTH",
+            "dataType": "int64",
+            "sourceColumn": "MONTH",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "DAY",
+            "dataType": "int64",
+            "sourceColumn": "DAY",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "NDAY",
+            "dataType": "string",
+            "sourceColumn": "NDAY",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "NMONTH",
+            "dataType": "string",
+            "sourceColumn": "NMONTH",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "DAY_YEAR",
+            "dataType": "int64",
+            "sourceColumn": "DAY_YEAR",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "PERIOD",
+            "dataType": "string",
+            "sourceColumn": "PERIOD",
+            "sourceProviderType": "Char"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DIM_TIME",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[DIM_TIME].*   FROM [dbo].[DIM_TIME] ",
+              "dataSource": "SqlServer DESKTOP-GENJ6EP northwind_dw"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[DIM_TIME].*   FROM [dbo].[DIM_TIME] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DIM_TIME"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "FACT_SALES",
+        "columns": [
+          {
+            "name": "ID_SALE",
+            "dataType": "int64",
+            "sourceColumn": "ID_SALE",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ID_EMPLOYEE",
+            "dataType": "int64",
+            "sourceColumn": "ID_EMPLOYEE",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ID_ORDER",
+            "dataType": "int64",
+            "sourceColumn": "ID_ORDER",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ID_CUSTOMER",
+            "dataType": "int64",
+            "sourceColumn": "ID_CUSTOMER",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ID_PRODUCT",
+            "dataType": "int64",
+            "sourceColumn": "ID_PRODUCT",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ID_TIME",
+            "dataType": "int64",
+            "sourceColumn": "ID_TIME",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "QUANTITY",
+            "dataType": "int64",
+            "sourceColumn": "QUANTITY",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "UNIT_PRICE",
+            "dataType": "decimal",
+            "sourceColumn": "UNIT_PRICE",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "sourceProviderType": "Numeric",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"$ Inglés (Estados Unidos)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          },
+          {
+            "name": "DISCOUNT",
+            "dataType": "double",
+            "sourceColumn": "DISCOUNT",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "ORDER_DATE",
+            "dataType": "dateTime",
+            "sourceColumn": "ORDER_DATE",
+            "formatString": "d/M/yyyy",
+            "sourceProviderType": "WChar",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"DateTimeCustom\"><DateTimes><DateTime LCID=\"5130\" Group=\"ShortDate\" FormatString=\"d/M/yyyy\" /></DateTimes></Format>"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "FACT_SALES",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[FACT_SALES].*   FROM [dbo].[FACT_SALES] ",
+              "dataSource": "SqlServer DESKTOP-GENJ6EP northwind_dw"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[FACT_SALES].*   FROM [dbo].[FACT_SALES] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "FACT_SALES"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "METRICAS",
+        "columns": [
+          {
+            "name": "IDENTIFICADOR",
+            "dataType": "int64",
+            "sourceColumn": "IDENTIFICADOR",
+            "sourceProviderType": "Integer"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "METRICAS",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[METRICAS].*   FROM [dbo].[METRICAS] ",
+              "dataSource": "SqlServer DESKTOP-GENJ6EP northwind_dw"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[METRICAS].*   FROM [dbo].[METRICAS] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "METRICAS"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "ORDER_DETAILS",
+        "columns": [
+          {
+            "name": "ORDERID",
+            "dataType": "int64",
+            "sourceColumn": "ORDERID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "PRODUCTID",
+            "dataType": "int64",
+            "sourceColumn": "PRODUCTID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "UNITPRICE",
+            "dataType": "double",
+            "sourceColumn": "UNITPRICE",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "QUANTITY",
+            "dataType": "int64",
+            "sourceColumn": "QUANTITY",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "DISCOUNT",
+            "dataType": "double",
+            "sourceColumn": "DISCOUNT",
+            "sourceProviderType": "Numeric"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "ORDER_DETAILS",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[ORDER_DETAILS].*   FROM [dbo].[ORDER_DETAILS] ",
+              "dataSource": "SqlServer DESKTOP-GENJ6EP northwind_dw"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[ORDER_DETAILS].*   FROM [dbo].[ORDER_DETAILS] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "ORDER_DETAILS"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "0c4ffb3e-3635-4441-92f1-3264b99b185e",
+        "fromTable": "FACT_SALES",
+        "fromColumn": "ID_CUSTOMER",
+        "toTable": "DIM_CUSTOMERS",
+        "toColumn": "ID_CUSTOMER"
+      },
+      {
+        "name": "ddc5c775-ed9b-411a-8c5c-b4abf7829e00",
+        "fromTable": "FACT_SALES",
+        "fromColumn": "ID_EMPLOYEE",
+        "toTable": "DIM_EMPLOYEES",
+        "toColumn": "ID_EMPLOYEE"
+      },
+      {
+        "name": "02f97dc8-b44c-43d3-be7f-449ecbb299f1",
+        "fromTable": "FACT_SALES",
+        "fromColumn": "ID_ORDER",
+        "toTable": "DIM_ORDERS",
+        "toColumn": "ID_ORDER"
+      },
+      {
+        "name": "4bd3f39a-e473-4b7e-b678-ed97aea21926",
+        "fromTable": "FACT_SALES",
+        "fromColumn": "ID_PRODUCT",
+        "toTable": "DIM_PRODUCTS",
+        "toColumn": "ID_PRODUCT"
+      },
+      {
+        "name": "ee0c919c-1a33-4bbb-82fd-3e24bd306f4a",
+        "fromTable": "FACT_SALES",
+        "fromColumn": "ID_TIME",
+        "toTable": "DIM_TIME",
+        "toColumn": "ID_TIME"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "ClientCompatibilityLevel",
+        "value": "400"
+      }
+    ]
+  },
+  "id": "SemanticModel"
+}
