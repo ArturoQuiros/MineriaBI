@@ -2,24 +2,40 @@
 KPIs: El objetivo de los KPIs es medir las ventas mensuales y determinar el crecimiento mensual con respecto a un incremento meta anual del 2% de las ventas del año anterior
 Formulas: 
 
+# Esta fórmula calcula el total de ventas actuales (segun los filtros por año y producto/cliente/empleado/categoria/proveedor), con el precio, cantidad y descuento de cada producto vendido
+
 Current Sales = Sumx(FACT_SALES, ([UNIT_PRICE] * [QUANTITY])* (1 - [DISCOUNT]))
+
+# Esta fórmula calcula el monto de ventas del año anterior, si el resultado es vacío, lo reemplaza con un 0
 
 Last Year Sales = var monto_anio_anterior = calculate([Current Sales],filter(all(DIM_TIME[YEAR]),DIM_TIME[YEAR]=max(DIM_TIME[YEAR])-1))
 var resultado = monto_anio_anterior
 return IF(ISBLANK(resultado),0,resultado)
 
+# Esta fórmula calcula la meta del año actual según las ventas del año anterior (+2%)
+
 Goal = [Last Year Sales] * 1.02
+
+# Esta fórmula calcula el porcentaje de incremento o decremento según las ventas actuales y las del año anterior, si no hubo ventas el año anterior, devuelve un 0
 
 Percentage Inc-Dec Monthly Anual = IFERROR(
     (([Current Sales] - [Last Year Sales]) / [Last Year Sales]),
     0
 )
 
+# Esta fórmula calcula el color (verde o rojo) según el porcentaje de incremento o decremento (si es mayor que 0, es verde, y si es menor que 0 es rojo)
+
 Inc-Dec Color = IF([Percentage Inc-Dec Monthly Anual] > 0, 1, 0)
+
+# Esta fórmula calcula la cantidad de ventas del año actual
 
 Sales Quantity = DISTINCTCOUNT(FACT_SALES[ID_SALE])
 
+# Esta fórmula calcula el mínimo de ventas según la meta, se utiliza en los gráficos Cylindrical Gauge y Dial Gauge para tener un rango adecuado
+
 Min Sales = [Goal] * 0.5
+
+# Esta fórmula calcula el máximo de ventas según la meta, se utiliza en los gráficos Cylindrical Gauge y Dial Gauge para tener un rango adecuado
 
 Max Sales = [Goal] * 1.3
 
